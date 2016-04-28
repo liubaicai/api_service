@@ -8,16 +8,8 @@
 	<link href="//cdn.bootcss.com/summernote/0.8.1/summernote.css" rel="stylesheet">
 	<link href="//cdn.bootcss.com/SyntaxHighlighter/3.0.83/styles/shCore.css" rel="stylesheet">
 	<link href="//cdn.bootcss.com/SyntaxHighlighter/3.0.83/styles/shThemeDefault.css" rel="stylesheet">
+	<link href="/css/app.css" rel="stylesheet">
 	<%= csrf_meta_tags %>
-	<style>
-		body {
-			padding-top: 75px;
-			font-family:Calibri,Arial,Microsoft YaHei;
-		}
-		.container {
-			max-width:1000px;
-		}  
-	</style>
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,30 +20,62 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+				<img class="navbar-brand img-responsive"  src="/images/sitelogo.png">
 				<a class="navbar-brand" href="/">菜园子</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">主页</a></li>
+            		<li><a href="/articles/new">发表</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="col-md-9 col-md-push-3">
+	<div class="container page">
+		<div class="col-sm-9 col-sm-push-3">
 			<% if flash[:notice] %>
 			<p class="alert alert-success"><%= flash[:notice] %>
 			<% end %>
 			<% if flash[:error] %>
 			<p class="alert alert-warning"><%= flash[:error] %>
 			<% end %>
-
-			<%= yield %>
+			
+			<div class="bc-body-content">
+				<%= yield %>
+			</div>
+			
 
 		</div>
-		<div class="col-md-3 col-md-pull-9">
-			<h2>Slide</h2>
+		<div class="col-sm-3 col-sm-pull-9 bc-slide">
+			<div class="row bc-slide-item">
+				<img class="img-responsive center-block" src="http://www.liubaicai.net/wp-content/uploads/2015/12/logo.png" alt="刘白菜">
+			</div>
+			<div class="row bc-slide-item">
+				<div>
+					风恶依然清白容
+					<br>
+					霜欺雪覆倒如钟
+					<br>
+					知心解我芊芊叶
+					<br>
+					永葆玲珑为尔忠
+				</div>
+			</div>
+			<div class="row bc-slide-item">
+				<h3><span>分类</span></h3>
+			</div>
+			<div class="row bc-slide-item">
+				<h3><span>管理</span></h3>
+			</div>
+			<div class="row bc-slide-item">
+				<h3><span>友情链接</span></h3>
+				<div>
+					<a href="http://www.6mao.wang">遛猫网</a><br>
+					<a href="http://www.yszdt.com">洋柿子蛋汤</a><br>
+					<a href="http://www.sundabao.com/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/">大宝日记</a><br>
+				</div>
+			</div>
 		</div>
 	</div><!-- /.container -->
 
@@ -65,5 +89,34 @@
 	<script src="//cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushJava.js"></script>
 	<script src="//cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushRuby.js"></script>
 	<script src="//cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#summernote').summernote({
+				height: "300px",
+				callbacks: {
+					onImageUpload: function(files) {
+						var $editor = $(this);
+						var data = new FormData();
+						data.append('fileup', files[0]);
+						$.ajax({
+							url: '/image/upload',
+							method: 'POST',
+							xhr: function() {
+								var myXhr = $.ajaxSettings.xhr();
+								if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
+								return myXhr;
+							},
+							data: data,
+							processData: false,
+							contentType: false,
+							success: function(url) {
+								$editor.summernote('insertImage', url);
+							}
+						});
+					}
+				}
+			});
+		});
+	</script>
 </body>
 </html>

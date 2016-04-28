@@ -1,0 +1,14 @@
+<h1>发表</h1>
+<%= form_for :article, url: articles_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title,class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text,class: "form-control",id: "summernote" %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

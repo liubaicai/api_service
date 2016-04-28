@@ -1,2 +1,26 @@
-<h1>Baicai Blog</h1>
-<p>施工中</p>
+<div class="row">
+    <% @articles.each do |article| %>
+        <article>
+            <header class="clearfix">
+                <h2>
+                    <%=link_to article.title, article %>
+                </h2>
+            </header>
+
+
+            <div class="clearfix">
+                <p><%= strip_tags(article.text)[0..150] %></p>
+            </div>
+
+            <footer class="clearfix">
+                <div>
+                    <span>发表于<%= article.created_at.to_s(:db) %></span>
+                </div>
+            </footer>
+        </article>
+    <% end %>
+</div>
+
+<div class="row digg_pagination">
+    <%=will_paginate @articles %> 
+</div>
