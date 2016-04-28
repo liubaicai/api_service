@@ -14,6 +14,9 @@
 			padding-top: 75px;
 			font-family:Calibri,Arial,Microsoft YaHei;
 		}
+		.container {
+			max-width:1000px;
+		}  
 	</style>
 </head>
 <body>
@@ -36,13 +39,20 @@
 	</div>
 
 	<div class="container">
-		<% if flash[:notice] %>
-		<p class="alert alert-success"><%= flash[:notice] %>
-		<% end %>
-		<% if flash[:error] %>
-		<p class="alert alert-warning"><%= flash[:error] %>
-		<% end %>
-		<%= yield %>
+		<div class="col-md-9 col-md-push-3">
+			<% if flash[:notice] %>
+			<p class="alert alert-success"><%= flash[:notice] %>
+			<% end %>
+			<% if flash[:error] %>
+			<p class="alert alert-warning"><%= flash[:error] %>
+			<% end %>
+
+			<%= yield %>
+
+		</div>
+		<div class="col-md-3 col-md-pull-9">
+			<h2>Slide</h2>
+		</div>
 	</div><!-- /.container -->
 
 	<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
