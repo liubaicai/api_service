@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'image/upload'
+
   root 'articles#index'
   
   resources :articles

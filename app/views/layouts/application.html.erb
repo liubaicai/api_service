@@ -20,13 +20,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<img class="navbar-brand img-responsive"  src="/images/sitelogo.png">
+				<img class="navbar-brand img-responsive" src="/images/sitelogo_w.svg">
 				<a class="navbar-brand" href="/">菜园子</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">主页</a></li>
-            		<li><a href="/articles/new">发表</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -49,7 +48,7 @@
 		</div>
 		<div class="col-sm-3 col-sm-pull-9 bc-slide">
 			<div class="row bc-slide-item">
-				<img class="img-responsive center-block" src="http://www.liubaicai.net/wp-content/uploads/2015/12/logo.png" alt="刘白菜">
+				<img class="img-responsive center-block" src="/images/sitelogo.svg" alt="刘白菜">
 			</div>
 			<div class="row bc-slide-item">
 				<div>
@@ -63,13 +62,26 @@
 				</div>
 			</div>
 			<div class="row bc-slide-item">
-				<h3><span>分类</span></h3>
+				<ul>
+					<li><a href="http://www.liubaicai.net/archives/category/mobile">Mobile</a></li>
+					<li><a href="http://www.liubaicai.net/archives/category/dotnet">.Net</a></li>
+					<li><a href="http://www.liubaicai.net/archives/category/web">Web</a></li>
+					<li><a href="http://www.liubaicai.net/archives/category/ruby">Ruby</a></li>
+					<li><a href="http://www.liubaicai.net/archives/category/iot">IOT</a></li>
+					<li><a href="http://www.liubaicai.net/com-doc-url">常用文档地址</a></li>
+					<li><a href="http://www.liubaicai.net/messageboard">留言板</a></li>
+					<li><a href="http://www.liubaicai.net/archives">归档</a></li>
+					<li><a href="http://www.liubaicai.net/acfunarticle">AcFun文章区第三方安卓客户端</a></li>
+				</ul>
 			</div>
 			<div class="row bc-slide-item">
-				<h3><span>管理</span></h3>
+				<ul>
+            		<li><a href="/articles/new">发表</a></li>
+            		<li><a href="#">管理</a></li>
+				</ul>
 			</div>
 			<div class="row bc-slide-item">
-				<h3><span>友情链接</span></h3>
+				<h4><span>友情链接</span></h4>
 				<div>
 					<a href="http://www.6mao.wang">遛猫网</a><br>
 					<a href="http://www.yszdt.com">洋柿子蛋汤</a><br>
@@ -78,6 +90,13 @@
 			</div>
 		</div>
 	</div><!-- /.container -->
+	
+	<footer class="bc-footer">
+		<div class="container">
+			<p>Powerby<a href="http://weibo.com/liubaicai" target="_blank">@刘白菜</a>，项目源码托管于<a href="https://github.com/liubaicai/baicai_rails_blog" target="_blank">GitHub</a></p>
+			<p>京ICP备14022168号</p>
+		</div>
+	</footer>
 
 	<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.js"></script>
@@ -101,11 +120,11 @@
 						$.ajax({
 							url: '/image/upload',
 							method: 'POST',
-							xhr: function() {
-								var myXhr = $.ajaxSettings.xhr();
-								if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
-								return myXhr;
-							},
+							// xhr: function() {
+							// 	var myXhr = $.ajaxSettings.xhr();
+							// 	if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
+							// 	return myXhr;
+							// },
 							data: data,
 							processData: false,
 							contentType: false,
