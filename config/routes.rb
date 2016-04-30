@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  post 'image/upload'
-
   root 'articles#index'
   
   resources :articles
+  resources :categories
+
+  post 'image/upload'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

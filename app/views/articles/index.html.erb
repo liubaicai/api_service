@@ -3,7 +3,7 @@
         <article>
             <header class="clearfix">
                 <h2>
-                    <%=link_to article.title, article %>
+                    <a href="/articles/<%= article.id %>.html"><%= article.title %></a>
                 </h2>
             </header>
 

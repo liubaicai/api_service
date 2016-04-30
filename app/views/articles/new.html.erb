@@ -5,6 +5,14 @@
     <%= f.text_field :title,class: "form-control" %>
   </p>
   <p>
+    <%= f.label :category %><br>
+    <select class="form-control" name="article[category_id]" id="article_category_id">
+      <% get_categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>
     <%= f.label :text %><br>
     <%= f.text_area :text,class: "form-control",id: "summernote" %>
   </p>

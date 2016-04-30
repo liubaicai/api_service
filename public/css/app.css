@@ -83,6 +83,8 @@ article{
 .bc-slide-item{
     padding: 10px;
     max-width:100%;
+    font-size: 16px;
+    line-height: 1.6;
 }
 .bc-footer {
     padding-top: 10px;
