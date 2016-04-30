@@ -1,10 +1,12 @@
-<h1>新分类</h1>
-<%= form_for :category, url: categories_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name,class: "form-control" %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="bc-body-content row">
+  <h1>新分类</h1>
+  <%= form_for :category, url: categories_path do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name,class: "form-control" %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>

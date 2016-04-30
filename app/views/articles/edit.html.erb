@@ -1,7 +1,7 @@
 
 <div class="bc-body-content row">
-  <h1>发表</h1>
-  <%= form_for :article, url: articles_path do |f| %>
+  <h1>编辑</h1>
+  <%= form_for :article, url: article_path(@article), method: :patch  do |f| %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title,class: "form-control" %>
@@ -23,4 +23,3 @@
     </p>
   <% end %>
 </div>
-
