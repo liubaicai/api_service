@@ -1,0 +1,22 @@
+
+<div class="page-header">
+  <h1>文章管理</h1>
+</div>
+
+<div class="bc-body-content row">
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th colspan="2"></th>
+        </tr>
+        <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.id %></td>
+            <td><%= link_to article.title, article_path(article) %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Delete', article, :method => :delete , data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+
+<div class="page-header">
+  <h1>分类管理   <small><%= link_to '新建分类', new_category_path %></small></h1>
+</div>
+
+<div class="bc-body-content row">
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th colspan="2"></th>
+        </tr>
+        <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.id %></td>
+            <td><%= category.name %></td>
+            <td><%= link_to 'Edit', edit_category_path(category) %></td>
+            <td><%= link_to 'Delete', category, :method => :delete , data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>

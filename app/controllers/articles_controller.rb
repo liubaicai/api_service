@@ -1,12 +1,6 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
   
-  def authenticate
-    authenticate_or_request_with_http_basic('Administration') do |username, password|
-      username == 'admin' && password == 'admin'
-    end
-  end
-  
   def index
     @articles = Article.order('created_at DESC').page(params[:page])
   end
@@ -36,6 +30,12 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to :back
   end
 
 

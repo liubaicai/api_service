@@ -4,5 +4,9 @@ module ApplicationHelper
         categories = Category.all
         categories
     end
+  
+    def auth
+        true
+    end
     
 end

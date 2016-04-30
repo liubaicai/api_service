@@ -2,9 +2,7 @@
     <% @articles.each do |article| %>
         <article>
             <header class="clearfix">
-                <h2>
-                    <a href="/articles/<%= article.id %>.html"><%= article.title %></a>
-                </h2>
+                <h2><%=link_to article.title, article %></h2>
             </header>
 
 

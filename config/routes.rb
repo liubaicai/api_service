@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :articles
   resources :categories
 
+  get 'manager' => 'manager#index'
+  get 'manager/article'
+  get 'manager/category'
+
   post 'image/upload'
 
   # The priority is based upon order of creation: first created -> highest priority.

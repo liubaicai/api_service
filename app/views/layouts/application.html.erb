@@ -35,7 +35,7 @@
 	</div>
 
 	<div class="container page">
-		<div class="col-sm-8 col-sm-push-4">
+		<div class="col-md-8 col-md-push-4">
 			<% if flash[:notice] %>
 			<p class="alert alert-success"><%= flash[:notice] %>
 			<% end %>
@@ -49,7 +49,7 @@
 			
 
 		</div>
-		<div class="col-sm-4 col-sm-pull-8 bc-slide">
+		<div class="col-md-4 col-md-pull-8 bc-slide">
 			<div class="row bc-slide-item">
 				<img class="img-responsive center-block" src="/images/sitelogo.svg" alt="刘白菜">
 			</div>
@@ -76,7 +76,7 @@
 			<div class="row bc-slide-item">
 				<ul>
             		<li><a href="/articles/new">发表</a></li>
-            		<li><a href="#">管理</a></li>
+            		<li><a href="/manager">管理</a></li>
 				</ul>
 			</div>
 			<div class="row bc-slide-item">
@@ -99,6 +99,7 @@
 
 	<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+	<script src="/js/rails.js"></script>
 	<script src="/js/summernote.js"></script>
 	<script src="/js/summernote-ext-code.js"></script>
 	<script>
