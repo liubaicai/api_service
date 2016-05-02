@@ -1,4 +1,4 @@
-require 'qiniu/http'
+require 'qiniu'
 
 class ImageController < ApplicationController
   skip_before_action :verify_authenticity_token
