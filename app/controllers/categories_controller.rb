@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
+  http_basic_authenticate_with name: "admin", password: SiteConfig.getValue('pwd'), except: [:index, :show]
   
   def index
     @categories = Category.all
@@ -43,4 +43,5 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name)
   end
+  
 end

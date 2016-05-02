@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   
   resources :articles
   resources :categories
+  resources :links
 
   get 'manager' => 'manager#index'
   get 'manager/article'
   get 'manager/category'
+  get 'manager/link'
+  get 'manager/settings'
+  post 'manager/editsettings'
 
   post 'image/upload'
 

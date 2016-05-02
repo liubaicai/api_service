@@ -52,6 +52,11 @@ body {
     background-color: #eaeaea;
     font-family: 'Lato',Arial,'Microsoft YaHei';
 }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 a {
     color: #333;
 }
@@ -64,6 +69,7 @@ article{
     border-bottom: 1px solid #ebebeb;
 }
 .container {
+    width:100%;
     max-width:1000px;
 }
 .page{
@@ -72,7 +78,8 @@ article{
     padding-bottom: 25px;
     background-color: #ffffff;
     box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-    max-width:98%;
+    width:98%;
+    max-width:1000px;
 }
 .bc-body-content{
     padding: 20px;

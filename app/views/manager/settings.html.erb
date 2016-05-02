@@ -1,0 +1,20 @@
+
+<div class="page-header">
+  <h1>网站设置</h1>
+</div>
+
+<%= form_tag("/manager/editsettings", method: "post", class: "form-horizontal bc-body-content") do |f| %>
+    <% @configs.each do |config| %>
+    <div class="form-group">
+        <label for="input<%= config.sc_key %>" class="col-sm-3 control-label"><%= config.sc_note %></label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="configs[<%= config.sc_key %>]" id="input<%= config.sc_key %>" value="<%= config.sc_value %>">
+        </div>
+    </div>
+    <% end %>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+        <button type="submit" class="btn btn-primary btn-block">保存</button>
+        </div>
+    </div>
+<% end %>

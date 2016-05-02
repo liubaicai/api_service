@@ -35,61 +35,58 @@
 		</div>
 	</div>
 
-	<div class="container page">
-		<div class="col-md-8 col-md-push-4">
-			<% if flash[:notice] %>
-			<p class="alert alert-success"><%= flash[:notice] %>
-			<% end %>
-			<% if flash[:error] %>
-			<p class="alert alert-warning"><%= flash[:error] %>
-			<% end %>
-			
-			<div>
-				<%= yield %>
-			</div>
-			
+	<div class="page">
+		<div class="container">
+			<div class="col-md-8 col-md-push-4">
+				<% if flash[:notice] %>
+				<p class="alert alert-success"><%= flash[:notice] %>
+				<% end %>
+				<% if flash[:error] %>
+				<p class="alert alert-warning"><%= flash[:error] %>
+				<% end %>
+				
+				<div>
+					<%= yield %>
+				</div>
+				
 
-		</div>
-		<div class="col-md-4 col-md-pull-8 bc-slide">
-			<div class="row bc-slide-item">
-				<img class="img-responsive center-block" src="/images/sitelogo.svg" alt="刘白菜">
 			</div>
-			<div class="row bc-slide-item">
-				<div>
-					风恶依然清白容
-					<br>
-					霜欺雪覆倒如钟
-					<br>
-					知心解我芊芊叶
-					<br>
-					永葆玲珑为尔忠
+			<div class="col-md-4 col-md-pull-8 bc-slide">
+				<div class="row bc-slide-item">
+					<img class="img-responsive center-block" src="/images/sitelogo.svg" alt="刘白菜">
+				</div>
+				<div class="row bc-slide-item">
+					<div>
+						风恶依然清白容
+						<br>
+						霜欺雪覆倒如钟
+						<br>
+						知心解我芊芊叶
+						<br>
+						永葆玲珑为尔忠
+					</div>
+				</div>
+				<div class="row bc-slide-item">
+					<h4>链接</h4>
+					<ul>
+					<% get_links.each do |link| %>
+						<li class="active">
+							<a href="<%= link.url %>" target="_blank"><%= link.title %></a>
+						</li>
+					<% end %>
+					</ul>
+				</div>
+				<div class="row bc-slide-item">
+					<h4><span>功能</span></h4>
+					<ul>
+						<li><a href="/articles/new">发表</a></li>
+						<li><a href="/manager">管理</a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="row bc-slide-item">
-				<h4>链接</h4>
-				<ul>
-					<li><a href="#">常用文档</a></li>
-					<li><a href="#">归档</a></li>
-					<li><a href="#">每日必应壁纸锁屏工具</a></li>
-					<li><a href="#">AcFun文章区第三方客户端</a></li>
-				</ul>
-			</div>
-			<div class="row bc-slide-item">
-				<ul>
-            		<li><a href="/articles/new">发表</a></li>
-            		<li><a href="/manager">管理</a></li>
-				</ul>
-			</div>
-			<div class="row bc-slide-item">
-				<h4><span>友情链接</span></h4>
-				<div>
-					<a href="http://www.6mao.wang">遛猫网</a><br>
-					<a href="http://www.yszdt.com">洋柿子蛋汤</a><br>
-					<a href="http://www.sundabao.com/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/">大宝日记</a><br>
-				</div>
-			</div>
-		</div>
-	</div><!-- /.container -->
+		</div><!-- /.container -->
+	</div>
+
 	
 	<footer class="bc-footer">
 		<div class="container">
