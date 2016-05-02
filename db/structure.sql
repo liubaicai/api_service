@@ -5,6 +5,7 @@ CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nam
 CREATE INDEX "index_articles_on_category_id" ON "articles" ("category_id");
 CREATE TABLE "site_configs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sc_key" varchar, "sc_value" varchar, "sc_note" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "sort" integer);
+CREATE TABLE "configs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sc_key" varchar, "sc_value" varchar, "sc_note" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO schema_migrations (version) VALUES ('20160428041322');
 
 INSERT INTO schema_migrations (version) VALUES ('20160429143423');
@@ -16,4 +17,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160502022622');
 INSERT INTO schema_migrations (version) VALUES ('20160502063727');
 
 INSERT INTO schema_migrations (version) VALUES ('20160502071222');
+
+INSERT INTO schema_migrations (version) VALUES ('20160502112706');
 
