@@ -2,8 +2,6 @@ class ImageController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def upload
-    # 七牛云构建鉴权对象
-    Qiniu.establish_connection!(:access_key => Config.getValue('qn_ak'),:secret_key => Config.getValue('qn_sk'))
     unless params[:fileup] && (tempfile = params[:fileup].tempfile)
         render plain: 'null'
     else
