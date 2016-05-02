@@ -58,6 +58,7 @@ img {
     display: block;
 }
 a {
+    max-width: 100%;
     color: #333;
 }
 ul, ol {
