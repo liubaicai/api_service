@@ -1,5 +1,5 @@
 class ManagerController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: SiteConfig.getValue('pwd')
+  http_basic_authenticate_with name: "admin", password: "admin"
   
   def index
   end
@@ -16,15 +16,15 @@ class ManagerController < ApplicationController
     @links = Link.all
   end
   
-  def settings
-    @configs = SiteConfig.all
-  end
-  def editsettings
-    @configs = params[:configs]
-    @configs.each do |config|
-      SiteConfig.setValue(config[0],config[1])
-    end
-    redirect_to :back
-  end
+  # def settings
+  #   @configs = SiteConfig.all
+  # end
+  # def editsettings
+  #   @configs = params[:configs]
+  #   @configs.each do |config|
+  #     SiteConfig.setValue(config[0],config[1])
+  #   end
+  #   redirect_to :back
+  # end
   
 end

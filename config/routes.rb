@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'manager/article'
   get 'manager/category'
   get 'manager/link'
-  get 'manager/settings'
-  post 'manager/editsettings'
+  # get 'manager/settings'
+  # post 'manager/editsettings'
 
   post 'image/upload'
 
