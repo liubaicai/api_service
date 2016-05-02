@@ -6,11 +6,9 @@ class ImageController < ApplicationController
         render plain: 'null'
     else
       begin 
-        # 七牛云构建鉴权对象
-        Qiniu.establish_connection! :access_key => SiteConfig.getValue('qn_ak'),:secret_key => SiteConfig.getValue('qn_sk')
-        base_qiniu_url = SiteConfig.getValue('qn_root')
+        base_qiniu_url = 'http://7xpagu.com1.z0.glb.clouddn.com/'
         #要上传的空间
-        bucket = SiteConfig.getValue('qn_bucket')
+        bucket = 'www-liubaicai-net'
         #上传到七牛后保存的文件名
         key = "images/"+Time.now.to_i.to_s+".jpg"
         #构建上传策略

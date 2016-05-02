@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 SiteConfig.create(sc_key: "pwd", sc_value: "admin", sc_note: "管理员密码")
-SiteConfig.create(sc_key: "qn_ak", sc_value: "", sc_note: "七牛access_key")
-SiteConfig.create(sc_key: "qn_sk", sc_value: "", sc_note: "七牛secret_key")
-SiteConfig.create(sc_key: "qn_root", sc_value: "", sc_note: "七牛根目录")
-SiteConfig.create(sc_key: "qn_bucket", sc_value: "", sc_note: "七牛bucket")
+# SiteConfig.create(sc_key: "qn_ak", sc_value: "", sc_note: "七牛access_key")
+# SiteConfig.create(sc_key: "qn_sk", sc_value: "", sc_note: "七牛secret_key")
+# SiteConfig.create(sc_key: "qn_root", sc_value: "", sc_note: "七牛根目录")
+# SiteConfig.create(sc_key: "qn_bucket", sc_value: "", sc_note: "七牛bucket")
