@@ -1,3 +1,5 @@
+require 'qiniu/http'
+
 class ImageController < ApplicationController
   skip_before_action :verify_authenticity_token
   
@@ -7,8 +9,7 @@ class ImageController < ApplicationController
     else
       begin 
         # 七牛云构建鉴权对象
-        Qiniu.establish_connection! :access_key => SiteConfig.getValue('qn_ak'),
-                                    :secret_key => SiteConfig.getValue('qn_sk')
+        Qiniu.establish_connection! :access_key => SiteConfig.getValue('qn_ak'),:secret_key => SiteConfig.getValue('qn_sk')
         base_qiniu_url = SiteConfig.getValue('qn_root')
         #要上传的空间
         bucket = SiteConfig.getValue('qn_bucket')
