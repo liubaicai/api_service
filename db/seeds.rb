@@ -9,3 +9,4 @@
 Config.create(sc_key: "pwd", sc_value: "admin", sc_note: "管理员密码")
 Config.create(sc_key: "qn_ak", sc_value: "", sc_note: "七牛access_key")
 Config.create(sc_key: "qn_sk", sc_value: "", sc_note: "七牛secret_key")
+Config.create(sc_key: "slide_content", sc_value: "", sc_note: "侧边栏内容")
