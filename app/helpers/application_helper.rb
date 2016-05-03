@@ -14,6 +14,10 @@ module ApplicationHelper
         content = Config.getValue('slide_content')
         content
     end
+    
+    def get_host
+        'www.liubaicai.net'
+    end
   
     def auth
         true

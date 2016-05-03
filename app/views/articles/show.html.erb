@@ -9,7 +9,7 @@
 </div>
 <div>
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="<%= @article.id %>" data-title="<%= @article.title %>" data-url="<%= article_path(@article) %>"></div>
+	<div class="ds-thread" data-thread-key="<%= @article.id %>" data-title="<%= @article.title %>" data-url="<%= get_host %><%= article_path(@article) %>"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
