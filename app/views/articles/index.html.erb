@@ -1,16 +1,15 @@
 <div class="bc-body-content row">
     <% @articles.each do |article| %>
         <article>
-            <header class="clearfix">
-                <h2><%=link_to article.title, article %></h2>
+            <header>
+                <div>
+                    <h2 class="bc-title"><%=link_to article.title, article %></h2>
+                </div>
             </header>
-
-
-            <div class="clearfix">
+            <div>
                 <p><%= strip_tags(article.text)[0..150] %></p>
             </div>
-
-            <footer class="clearfix">
+            <footer>
                 <div>
                     <span>发表于<%= article.created_at.localtime.to_s(:db) %></span>
                 </div>
