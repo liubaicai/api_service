@@ -60,6 +60,7 @@ img {
 a {
     max-width: 100%;
     color: #333;
+	word-wrap: break-word;
 }
 ul, ol {
     list-style: none;
