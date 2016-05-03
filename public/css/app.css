@@ -71,7 +71,7 @@ a {
     max-width: 100%;
     color: #4d6dad;
 	word-wrap: break-word;
-    transition: 0.5s ease;
+    transition: 0.2s ease;
     cursor: auto;
     text-decoration: none; 
 }
@@ -79,9 +79,11 @@ a:link{
     text-decoration:none;
 }
 a:visited{
+    color: #666;
     text-decoration:none;
 }
 a:hover{
+    color: #333;
     text-decoration:none;
 }
 a:active{
@@ -109,7 +111,8 @@ article{
     max-width:1000px;
 }
 .bc-title{
-    padding-bottom: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     margin-left: -2px;
 }
 .bc-body-content{
