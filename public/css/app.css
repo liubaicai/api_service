@@ -59,7 +59,7 @@ body {
     background-image: url(/images/back-image.jpg);
     position: relative;
     min-height: 100%;
-    padding-top: 75px;
+    padding-top: 65px;
     padding-bottom: 25px;
 }
 img {
@@ -110,13 +110,19 @@ article{
     width:98%;
     max-width:1000px;
 }
+.page-header{
+    margin-top: 0px;
+    padding-top: 0px;
+}
 .bc-title{
     padding-top: 16px;
     padding-bottom: 16px;
     margin-left: -2px;
 }
 .bc-body-content{
-    padding: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .bc-slide {
     max-width:80%;
