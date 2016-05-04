@@ -134,6 +134,9 @@ article{
     font-size: 16px;
     line-height: 1.6;
 }
+.bc-slide-item-header{
+    padding-bottom: 5px;
+}
 .bc-footer {
     padding-top: 10px;
     padding-bottom: 20px;
