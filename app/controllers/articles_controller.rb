@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd'), except: [:index, :show]
+  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd'), except: [:index, :show, :search]
   
   def index
     @articles = Article.order('created_at DESC').page(params[:page])
@@ -36,6 +36,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to :back
+  end
+
+  def search
+    @articles = Article.where('title like ? or text like ?','%'+params[:keyword]+'%','%'+params[:keyword]+'%').order('created_at DESC').page(params[:page])
+    render 'index'
   end
 
   private

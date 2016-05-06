@@ -68,6 +68,16 @@
 					</div>
 				</div>
 				<div class="row bc-slide-item">
+					<%= form_tag("/articles/search", method: "get", class: "form-horizontal") do |f| %>
+						<div>
+							<input type="text" class="form-control" name="keyword" id="keyword" value="">
+						</div>
+						<div>
+        					<button type="submit" class="btn">搜索</button>
+						</div>
+					<% end %>
+				</div>
+				<div class="row bc-slide-item">
 					<h5 class="bc-slide-item-header">链接</h5>
 					<ul>
 					<% get_links.each do |link| %>
@@ -120,11 +130,6 @@
 						$.ajax({
 							url: '/image/upload',
 							method: 'POST',
-							// xhr: function() {
-							// 	var myXhr = $.ajaxSettings.xhr();
-							// 	if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
-							// 	return myXhr;
-							// },
 							data: data,
 							processData: false,
 							contentType: false,
