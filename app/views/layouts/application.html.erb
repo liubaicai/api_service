@@ -32,6 +32,15 @@
 						</li>
 					<% end %>
 				</ul>
+			
+				<%= form_tag("/articles/search", method: "get", class: "navbar-form navbar-right") do |f| %>
+					<div class="input-group">
+						<input type="text" class="form-control" name="keyword" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit">Search</button>
+						</span>
+					</div>
+				<% end %>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
@@ -66,16 +75,6 @@
 						<br>
 						永葆玲珑为尔忠
 					</div>
-				</div>
-				<div class="row bc-slide-item">
-					<%= form_tag("/articles/search", method: "get", class: "form-inline") do |f| %>
-						<div class="input-group">
-							<input type="text" class="form-control" name="keyword" placeholder="Search for...">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="submit">Go</button>
-							</span>
-						</div>
-					<% end %>
 				</div>
 				<div class="row bc-slide-item">
 					<h5 class="bc-slide-item-header">链接</h5>
