@@ -79,7 +79,9 @@ class ApplicationController < ActionController::Base
   def filter_req
     if include_badbots? request.user_agent
       render plain: "爬虫木有小JJ"
-    else unless include_bots? request.user_agent
+    elsif include_bots? request.user_agent
+      #do nothing
+    else
       ReqLog.insert(request.remote_ip,request.url,request.method,request.user_agent)
     end
   end
