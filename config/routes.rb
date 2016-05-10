@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'articles#index'
   
+  get 'articles/search'
+  get 'archives/:id' => 'articles#show'
+  get 'index.php/archives/:id' => 'articles#show'
+  
   resources :articles
   resources :categories
   resources :links

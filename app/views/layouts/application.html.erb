@@ -24,6 +24,15 @@
 				<a class="navbar-brand" href="/">菜园子</a>
 			</div>
 			<div class="collapse navbar-collapse">
+				<%= form_tag("/articles/search", method: "get", class: "navbar-form navbar-right") do |f| %>
+					<div class="input-group">
+						<input type="text" class="form-control" name="keyword" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit">Search</button>
+						</span>
+					</div>
+				<% end %>
+				
 				<ul class="nav navbar-nav">
 					<!--<li class="active"><a href="/">主页</a></li>-->
 					<% get_categories.each do |category| %>
@@ -120,11 +129,6 @@
 						$.ajax({
 							url: '/image/upload',
 							method: 'POST',
-							// xhr: function() {
-							// 	var myXhr = $.ajaxSettings.xhr();
-							// 	if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
-							// 	return myXhr;
-							// },
 							data: data,
 							processData: false,
 							contentType: false,
