@@ -12,7 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= bootstrap
+ *= bootstrap-theme
+ *= font-awesome
+ *= summernote
+ *= vs
  */
+
+
 .digg_pagination {
     background: white;
     cursor: default;

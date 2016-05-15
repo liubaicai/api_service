@@ -18,29 +18,4 @@
 //= require rails
 //= require summernote
 //= require summernote-ext-code
-
-$(document).ready(function() {
-    $('pre').each(function(i, block) {
-        hljs.highlightBlock(block);
-    });
-    $('#summernote').summernote({
-        height: "300px",
-        callbacks: {
-            onImageUpload: function(files) {
-                var $editor = $(this);
-                var data = new FormData();
-                data.append('fileup', files[0]);
-                $.ajax({
-                    url: '/image/upload',
-                    method: 'POST',
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    success: function(url) {
-                        $editor.summernote('insertImage', url);
-                    }
-                });
-            }
-        }
-    });
-});
+//= require bootstrap
