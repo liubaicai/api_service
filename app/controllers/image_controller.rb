@@ -5,7 +5,10 @@ class ImageController < ApplicationController
     unless params[:fileup] && (tempfile = params[:fileup].tempfile)
         render plain: 'null'
     else
-      begin 
+      begin
+        Qiniu.establish_connection!(
+            :access_key => Config.getValue('qn_ak'),
+            :secret_key => Config.getValue('qn_sk'))
         base_qiniu_url = 'http://7xpagu.com1.z0.glb.clouddn.com/'
         #要上传的空间
         bucket = 'www-liubaicai-net'

@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @isShowSummerNote = true
   end
   def create
     @article = Article.new(article_params)
@@ -22,6 +23,7 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
+    @isShowSummerNote = true
   end
   def update
     @article = Article.find(params[:id])
