@@ -5,7 +5,9 @@
   <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <% if @isShowSummerNote %>
   <link href="//cdn.bootcss.com/summernote/0.8.1/summernote.css" rel="stylesheet">
+  <% end %>
   <link href="//cdn.bootcss.com/highlight.js/9.3.0/styles/vs.min.css" rel="stylesheet">
   <link href="/css/app.css" rel="stylesheet">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
@@ -110,8 +112,10 @@
 
   <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
   <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="//cdn.bootcss.com/summernote/0.8.1/summernote.min.js"></script>
   <script src="//cdn.bootcss.com/highlight.js/9.3.0/highlight.min.js"></script>
+  <% if @isShowSummerNote %>
+  <script src="//cdn.bootcss.com/summernote/0.8.1/summernote.min.js"></script>
+  <% end %>
   <script src="/js/rails.js"></script>
   <script>
     $(document).ready(function() {
