@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require highlight.pack
 //= require rails
+//= require bootstrap
+//= require highlight.pack
 //= require summernote
 //= require summernote-ext-code
-//= require bootstrap
