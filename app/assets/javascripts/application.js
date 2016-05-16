@@ -11,11 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+// require jquery_ujs
+// require turbolinks
 //= require_tree .
-//= require rails
-//= require bootstrap
-//= require highlight.pack
-//= require summernote
-//= require summernote-ext-code
