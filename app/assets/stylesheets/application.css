@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 .digg_pagination {
     background: white;
     cursor: default;
@@ -73,7 +72,7 @@ html { height: 100%; }
 body {
     font-family: 'Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif;
     color: #333;
-    background-image: url(/images/back-image.jpg);
+    background-image: url(../images/back-image.jpg);
     position: relative;
     min-height: 100%;
     padding-top: 65px;
@@ -92,6 +91,9 @@ a {
     transition: 0.2s ease;
     cursor: auto;
     text-decoration: none;
+}
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
 }
 a:link{
     text-decoration:none;
