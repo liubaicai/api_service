@@ -2,11 +2,10 @@
 <html>
 <head>
 	<title>菜园子 -刘白菜的个人博客</title>
-  <%= stylesheet_link_tag "application", media: "all" %>
   <% if @isShowSummerNote %>
       <link href="//cdn.bootcss.com/summernote/0.8.1/summernote.css" rel="stylesheet">
-      <script src="//cdn.bootcss.com/summernote/0.8.1/summernote.min.js"></script>
   <% end %>
+  <%= stylesheet_link_tag "application", media: "all" %>
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
 	<%= csrf_meta_tags %>
 </head>
@@ -107,6 +106,9 @@
 		</div>
 	</footer>
 
+  <% if @isShowSummerNote %>
+    <script src="//cdn.bootcss.com/summernote/0.8.1/summernote.min.js"></script>
+<% end %>
   <%= javascript_include_tag "application" %>
   <script>
     $(document).on('page:change', function() {
