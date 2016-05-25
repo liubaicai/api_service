@@ -13,10 +13,12 @@ class ApplicationController < ActionController::Base
       "bingbot",
       "YisouSpider",
       "Sogou web spider",
-      "Alibaba.Security.Heimdall"
+      "Alibaba.Security.Heimdall",
+      "msnbot"
       ];
 
   $bad_bots = [
+      "MSIE 6.0",
       "AhrefsBot",
       "JikeSpider",
       "adVisionCrawler.py",
@@ -49,7 +51,17 @@ class ApplicationController < ActionController::Base
       "oBot",
       "Indy Library",
       "FlightDeckReports Bot",
-      "Linguee Bot"
+      "Linguee Bot",
+      "NetcraftSurveyAgent",
+      "Go http package",
+      "SEOkicks-Robot",
+      "SafeDNSBot",
+      "PagesInventory",
+      "linkdexbot",
+      "Exabot",
+      "360JK qiyunce",
+      "BLEXBot",
+      "MegaIndex"
       ];
 
   def include_badbots? str
@@ -81,6 +93,8 @@ class ApplicationController < ActionController::Base
       render plain: "爬虫木有小JJ"
     elsif include_bots? request.user_agent
       #do nothing
+    elsif request.user_agent.to_s.size < 15
+      render plain: "你是猴子派来的爬虫么"
     else
       ReqLog.insert(request.remote_ip,request.url,request.method,request.user_agent)
     end
