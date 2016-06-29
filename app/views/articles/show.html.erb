@@ -5,7 +5,24 @@
     link_to '编辑', edit_article_path(@article) end %></span>
 </div>
 <div class="bc-body-content row">
-    <%= raw @article.text %>
+  <% unless @article.title=='归档' %>
+      <%= raw @article.text %>
+  <% else %>
+      <% all_articles = select_all_articles %>
+      <table class="table table-striped">
+        <tbody><tr>
+          <th>#</th>
+          <th>Title</th>
+        </tr>
+        <% all_articles.each do |article| %>
+            <tr>
+              <td><%= article.id %></td>
+              <td><a href="/articles/<%= article.id %>"><%= article.title %></a></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+  <% end %>
 </div>
 <div>
 <!-- 多说评论框 start -->
