@@ -8,4 +8,8 @@ module ArticlesHelper
         end
     end
 
+  def select_all_articles
+      return Article.all.order('created_at DESC')
+  end
+
 end
