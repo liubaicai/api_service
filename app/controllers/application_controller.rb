@@ -95,6 +95,8 @@ class ApplicationController < ActionController::Base
       #do nothing
     elsif request.user_agent.to_s.size < 15
       render plain: "你是猴子派来的爬虫么"
+    elsif !request.url.include?('liubaicai.net')
+      #do nothing
     else
       ReqLog.insert(request.remote_ip,request.url,request.method,request.user_agent)
     end
