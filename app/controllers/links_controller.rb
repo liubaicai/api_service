@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd')
+  before_action :check_auth
 
   def new
   end

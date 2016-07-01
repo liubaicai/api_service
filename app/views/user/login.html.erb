@@ -4,13 +4,14 @@
 </div>
 
 <%= form_tag("/user/login", method: "post", class: "form-horizontal") do |f| %>
-    <div class="form-group">
-      <label for="inputUsername">Username</label>
-      <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-    </div>
+    <!--<div class="form-group">-->
+      <!--<label for="inputUsername">Username</label>-->
+      <!--<input type="text" class="form-control" id="inputUsername" placeholder="Username">-->
+    <!--</div>-->
     <div class="form-group">
       <label for="inputPassword">Password</label>
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
+    <label><%= @error_msg %></label>
 <% end %>

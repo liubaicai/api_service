@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd'), except: [:index, :show, :search]
+  before_action :check_auth, except: [:index, :show, :search]
   
   def index
     @articles = Article.order('created_at DESC').page(params[:page])
