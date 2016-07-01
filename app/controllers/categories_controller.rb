@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :check_auth, except: [:index, :show]
+  skip_before_action :check_auth,only: [:index, :show]
   
   def index
     @categories = Category.all

@@ -1,5 +1,4 @@
 class LinksController < ApplicationController
-  before_action :check_auth
 
   def new
   end

@@ -1,5 +1,5 @@
 class ImageController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token,:check_auth
   
   def upload
     unless params[:fileup] && (tempfile = params[:fileup].tempfile)

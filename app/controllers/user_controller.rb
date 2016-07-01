@@ -1,6 +1,7 @@
 require 'digest/md5'
 
 class UserController < ApplicationController
+  skip_before_action :check_auth
 
   def login
   end

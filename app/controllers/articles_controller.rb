@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :check_auth, except: [:index, :show, :search]
+  skip_before_action :check_auth, only: [:index, :show, :search]
   
   def index
     @articles = Article.order('created_at DESC').page(params[:page])
