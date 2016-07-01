@@ -1,5 +1,4 @@
 class LinksController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd')
 
   def new
   end

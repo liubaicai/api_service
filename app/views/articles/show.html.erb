@@ -1,7 +1,7 @@
 
 <div class="page-header">
     <h2 class="bc-title"><%= @article.title %></h2>
-    <span>发表于<%= @article.created_at.localtime.to_s(:db) %> <%= if auth 
+    <span>发表于<%= @article.created_at.localtime.to_s(:db) %> <%= if has_auth
     link_to '编辑', edit_article_path(@article) end %></span>
 </div>
 <div class="bc-body-content row">

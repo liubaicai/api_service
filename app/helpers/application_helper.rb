@@ -18,9 +18,13 @@ module ApplicationHelper
     def get_host
         'www.liubaicai.net'
     end
-  
-    def auth
-        true
+
+    def has_auth
+        if cookies[:user_cookie] == Digest::MD5.hexdigest(Config.getValue('pwd'))
+            return true
+        else
+            return false
+        end
     end
     
 end

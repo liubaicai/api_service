@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd'), except: [:index, :show]
+  skip_before_action :check_auth,only: [:index, :show]
   
   def index
     @categories = Category.all

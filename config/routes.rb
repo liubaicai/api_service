@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'user/login'
+  post 'user/login' => 'user#postlogin'
+  get 'user/logout'
+
   root 'articles#index'
   
   get 'articles/search'

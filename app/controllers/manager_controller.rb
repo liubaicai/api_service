@@ -1,5 +1,4 @@
 class ManagerController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: Config.getValue('pwd')
   
   def index
   end

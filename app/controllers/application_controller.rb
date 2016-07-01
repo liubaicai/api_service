@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :filter_req
+  before_action :filter_req,:check_auth
     
   $bots = [
       "Googlebot",
@@ -99,6 +99,12 @@ class ApplicationController < ActionController::Base
       #do nothing
     else
       ReqLog.insert(request.remote_ip,request.url,request.method,request.user_agent)
+    end
+  end
+
+  def check_auth
+    if cookies[:user_cookie] != Digest::MD5.hexdigest(Config.getValue('pwd'))
+      redirect_to '/user/login'
     end
   end
 end
