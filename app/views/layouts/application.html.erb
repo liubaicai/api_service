@@ -74,16 +74,6 @@
 						永葆玲珑为尔忠
 					</div>
 				</div>
-				<div class="row bc-slide-item">
-					<h5 class="bc-slide-item-header">链接</h5>
-					<ul>
-					<% get_links.each do |link| %>
-						<li class="small">
-							<a href="<%= link.url %>" target="_blank"><%= link.title %></a>
-						</li>
-					<% end %>
-					</ul>
-				</div>
         <div class="row bc-slide-item">
           <h5 class="bc-slide-item-header">热门</h5>
           <ul>
@@ -94,6 +84,16 @@
             <% end %>
           </ul>
         </div>
+				<div class="row bc-slide-item">
+					<h5 class="bc-slide-item-header">链接</h5>
+					<ul>
+					<% get_links.each do |link| %>
+						<li class="small">
+							<a href="<%= link.url %>" target="_blank"><%= link.title %></a>
+						</li>
+					<% end %>
+					</ul>
+				</div>
 				<div class="row bc-slide-item">
 					<%= raw get_slide_content %>
 				</div>
