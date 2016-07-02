@@ -88,7 +88,7 @@
           <h5 class="bc-slide-item-header">热门</h5>
           <ul>
             <% get_hot_articles.each do |article| %>
-                <li class="active">
+                <li class="small">
                   <%=link_to article.title, article %>
                 </li>
             <% end %>
