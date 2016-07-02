@@ -84,6 +84,16 @@
 					<% end %>
 					</ul>
 				</div>
+        <div class="row bc-slide-item">
+          <h5 class="bc-slide-item-header">热门</h5>
+          <ul>
+            <% get_hot_articles.each do |article| %>
+                <li class="active">
+                  <%=link_to article.title, article %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
 				<div class="row bc-slide-item">
 					<%= raw get_slide_content %>
 				</div>

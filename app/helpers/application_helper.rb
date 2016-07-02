@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+    def get_hot_articles
+        articles = Article.limit(5).order('views DESC')
+        articles
+    end
+
     def get_categories
         categories = Category.all
         categories
