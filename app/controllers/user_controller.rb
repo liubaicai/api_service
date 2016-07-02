@@ -4,6 +4,7 @@ class UserController < ApplicationController
   skip_before_action :check_auth
 
   def login
+    @error_class = 'hidden'
   end
 
   def logout
@@ -17,6 +18,7 @@ class UserController < ApplicationController
       cookies[:user_cookie] = { :value => Digest::MD5.hexdigest(password) , :expires => 1.month.from_now }
       redirect_to '/'
     else
+      @error_class = ''
       @error_msg = '密码错误'
       cookies.delete :user_cookie
       render "login"
