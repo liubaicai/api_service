@@ -144,6 +144,9 @@ article{
     padding-left: 10px;
     padding-right: 10px;
 }
+.bc-name{
+    color: #cc6666;
+}
 .bc-slide {
     max-width:80%;
 }
