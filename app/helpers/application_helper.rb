@@ -4,7 +4,7 @@ module ApplicationHelper
         cache = $cache_cache.read('get_hot_articles')
         if cache.nil?
             articles = Article.limit(5).order('views DESC')
-            $cache_cache.write('get_hot_articles',articles)
+            $cache_cache.write('get_hot_articles',articles,:expires_in=>1.hours)
             articles
         else
             cache
