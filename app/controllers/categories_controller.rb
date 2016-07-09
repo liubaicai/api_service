@@ -15,6 +15,8 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
+      categories = Category.all
+      $cache_cache.write('get_categories',categories)
       redirect_to '/manager/category'
     else
       render 'new'
@@ -27,6 +29,8 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update(category_params)
+      categories = Category.all
+      $cache_cache.write('get_categories',categories)
       redirect_to '/manager/category'
     else
       render 'edit'
@@ -36,6 +40,8 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
+    categories = Category.all
+    $cache_cache.write('get_categories',categories)
     redirect_to :back
   end
 
