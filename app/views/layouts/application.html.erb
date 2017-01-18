@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>菜园子 -刘白菜的个人博客</title>
+  <% unless @article.nil? %>
+      <title><%= @article.title %></title>
+  <% else %>
+      <title>菜园子 -刘白菜的个人博客</title>
+  <% end %>
   <%= stylesheet_link_tag "application", media: "all" %>
   <% if @isShowSummerNote %>
       <link href="//cdn.bootcss.com/summernote/0.8.1/summernote.css" rel="stylesheet">

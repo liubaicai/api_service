@@ -18,4 +18,5 @@
 !/tmp/restart.txt
 
 # Ignore ide config.
+/public/.idea/*
 /.idea/*
