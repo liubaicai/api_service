@@ -1,8 +1,8 @@
 
 <div class="page-header">
-    <h2 class="bc-title"><%= @article.title %></h2>
-    <span><span class="bc-name">刘白菜</span> 发表于<%= @article.created_at.localtime.to_s(:db) %> &nbsp; <%= @article.views %>人围观 &nbsp;<%= if has_auth
-    link_to '编辑', edit_article_path(@article) end %></span>
+  <h2 class="bc-title"><%= @article.title %></h2>
+  <span><span class="bc-name">刘白菜</span> 发表于<%= @article.created_at.localtime.to_s(:db) %> &nbsp; <%= @article.views %>人围观 &nbsp;<%= if has_auth
+                                                                                                                                       link_to '编辑', edit_article_path(@article) end %></span>
 </div>
 <div class="bc-body-content row">
   <% unless @article.title=='归档' %>
@@ -25,21 +25,21 @@
   <% end %>
 </div>
 <div>
-<!--多说倒闭了-->
-<!--&lt;!&ndash; 多说评论框 start &ndash;&gt;-->
-	<!--<div class="ds-thread" data-thread-key="<%= @article.id %>" data-title="<%= @article.title %>" data-url="<%= get_host %><%= article_path(@article) %>"></div>-->
-<!--&lt;!&ndash; 多说评论框 end &ndash;&gt;-->
-<!--&lt;!&ndash; 多说公共JS代码 start (一个网页只需插入一次) &ndash;&gt;-->
-    <!--<script type="text/javascript">-->
-//        var duoshuoQuery = {short_name:"liubaicai"};
-//        (function() {
-//            var ds = document.createElement('script');
-//            ds.type = 'text/javascript';ds.async = true;
-//            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-//            ds.charset = 'UTF-8';
-//            (document.getElementsByTagName('head')[0]
-//                || document.getElementsByTagName('body')[0]).appendChild(ds);
-//        })();
-    <!--</script>-->
-<!--&lt;!&ndash; 多说公共JS代码 end &ndash;&gt;-->
+
+  <div id="container"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: '<%= @article.id %>', // 可选。默认为 location.href
+      owner: 'liubaicai',
+      repo: 'baicai_rails_blog',
+      oauth: {
+        client_id: 'b202d06a4c5b204e86f6',
+        client_secret: '2b0e1be40a33bb2f16b0d909a9c70ee6eb0bdea1',
+      },
+    })
+    gitment.render('container')
+  </script>
+
 </div>
