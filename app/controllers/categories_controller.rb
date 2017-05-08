@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @articles = Article.where(:category_id=>params[:id]).order('created_at DESC').page(params[:page])
+    @articles = Article.where(:category_id=>params[:id]).order('id DESC').page(params[:page])
     render "articles/index"
   end
 

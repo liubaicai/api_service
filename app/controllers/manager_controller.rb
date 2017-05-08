@@ -4,7 +4,7 @@ class ManagerController < ApplicationController
   end
   
   def article
-    @articles = Article.all.order('created_at DESC')
+    @articles = Article.all.order('id DESC')
   end
   
   def category

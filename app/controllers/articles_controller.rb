@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   skip_before_action :check_auth, only: [:index, :show, :search]
   
   def index
-    @articles = Article.order('created_at DESC').page(params[:page])
+    @articles = Article.order('id DESC').page(params[:page])
   end
   
   def show
