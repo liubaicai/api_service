@@ -9,7 +9,7 @@ module ArticlesHelper
     end
 
   def select_all_articles
-      return Article.all.order('created_at DESC')
+      return Article.all.order('id DESC')
   end
 
 end
