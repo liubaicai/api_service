@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    @hideLeft = true
     @article = Article.find(params[:id])
     @article.views = @article.views+1;
     @article.save
