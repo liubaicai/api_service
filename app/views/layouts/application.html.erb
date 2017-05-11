@@ -49,7 +49,7 @@
 
 	<div class="page">
 		<div class="container">
-			<div class="col-md-8 col-md-push-4">
+			<div class="<% unless @hideLeft %>col-md-8 col-md-push-4<% else %>col-md-12<% end %>">
 				<% if flash[:notice] %>
 				<p class="alert alert-success"><%= flash[:notice] %>
 				<% end %>
