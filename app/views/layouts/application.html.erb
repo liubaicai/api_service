@@ -3,8 +3,12 @@
 <head>
   <% unless @article.nil? %>
       <title><%= @article.title %></title>
+      <meta name="keywords" content="<%= @keywords || SiteConfig.keywords %>"/>
+      <meta name="description" content="<%= @article.title %>"/>
   <% else %>
       <title>菜园子 -刘白菜的个人博客</title>
+      <meta name="keywords" content="<%= @keywords || SiteConfig.keywords %>"/>
+      <meta name="description" content="<%= @description || SiteConfig.description %>"/>
   <% end %>
   <%= stylesheet_link_tag "application", media: "all" %>
   <% if @isShowSummerNote %>
