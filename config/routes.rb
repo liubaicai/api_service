@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  namespace :api do
+    resources :articles
+  end
+
+
   get 'user/login'
   post 'user/login' => 'user#postlogin'
   get 'user/logout'
