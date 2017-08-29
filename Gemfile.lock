@@ -85,6 +85,7 @@ GEM
       rest-client (~> 1.8.0)
       ruby-hmac (~> 0.4)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.6)
@@ -169,6 +170,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   qiniu
+  rack-cors
   rails (= 4.2.6)
   rufus-scheduler
   sass-rails (~> 5.0)
