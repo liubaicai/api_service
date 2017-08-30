@@ -4,7 +4,7 @@
  ============================================================ */
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 body {
-    font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+    font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
     line-height:30px;
     color:#333333;
 
@@ -20,8 +20,7 @@ body {
    HEADER STYLES
  ============================================================ */
 #header {
-    background-color: #0C739B;
-    background: url(../images/1.jpg) no-repeat center center;
+    background: #0C739B url(../images/title.jpg) no-repeat center center;
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
@@ -30,7 +29,7 @@ body {
 }
 #header .overlay {
     background-color:rgba(2, 2, 2, 0.56);
-    min-height:250px;
+    padding:25px 0 30px 0;
 }
 .logo-div {
     line-height:23px;
@@ -39,7 +38,7 @@ body {
 .logo-inner {
     font-size: 30px;
     font-weight: 900;
-    padding: 60px 20px 50px 20px;
+    padding: 15px 20px 0px 20px;
     text-align: center;
     line-height: 23px;
 }
@@ -59,9 +58,8 @@ body {
 }
 
 .header-text-top {
-    padding: 50px 30px 40px 30px;
+    padding: 0px 30px 0px 30px;
     line-height: 30px;
-    font-weight: 900;
 }
 
 .header-text-top a, .header-text-top a:hover {

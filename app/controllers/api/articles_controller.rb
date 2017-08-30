@@ -28,7 +28,8 @@ class Api::ArticlesController < ApplicationController
     article = Article.find(params[:id])
     article.views = article.views+1;
     article.save
-    render :json => article
+    model = Model.new(200,'success',article)
+    render :json => model
   end
 
   private
