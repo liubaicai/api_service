@@ -45,7 +45,10 @@ gem 'whenever'
 gem 'rufus-scheduler'
 
 # 跨域
-gem 'rack-cors'
+# gem 'rack-cors'
+
+# 文字截取
+gem 'truncato'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
