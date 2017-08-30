@@ -50,6 +50,8 @@ gem 'rufus-scheduler'
 # 文字截取
 gem 'truncato'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
