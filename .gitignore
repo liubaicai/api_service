@@ -20,3 +20,5 @@
 # Ignore ide config.
 /public/.idea/*
 /.idea/*
+
+Gemfile.lock
