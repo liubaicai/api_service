@@ -1,36 +1,4 @@
 Rails.application.routes.draw do
-
-
-  namespace :api do
-    resources :articles
-    resources :categories
-    resources :links
-  end
-
-
-  get 'user/login'
-  post 'user/login' => 'user#postlogin'
-  get 'user/logout'
-
-  root 'articles#index'
-  
-  get 'articles/search'
-  get 'archives/:id' => 'articles#show'
-  get 'index.php/archives/:id' => 'articles#show'
-  
-  resources :articles
-  resources :categories
-  resources :links
-
-  get 'manager' => 'manager#index'
-  get 'manager/article'
-  get 'manager/category'
-  get 'manager/link'
-  get 'manager/settings'
-  post 'manager/editsettings'
-
-  post 'image/upload'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

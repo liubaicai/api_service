@@ -1,1 +1,0 @@
-$cache_cache = ActiveSupport::Cache::MemoryStore.new

@@ -32,8 +32,3 @@ module BaicaiRailsBlog
     end
   end
 end
-
-SiteConfig = OpenStruct.new(
-    :keywords => '刘白菜,博客,编程,菜园子',
-    :description => '刘白菜的个人博客，原创或者转载的文章，可能有关技术，可能有关人生。'
-)
