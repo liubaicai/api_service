@@ -1,0 +1,2 @@
+class ReqLogsController < ApplicationController
+end

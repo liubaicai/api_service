@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :req_logs, except: [:new, :edit]
+  resources :configs, except: [:new, :edit]
+  resources :links, except: [:new, :edit]
+  resources :categories, except: [:new, :edit]
+  resources :articles, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

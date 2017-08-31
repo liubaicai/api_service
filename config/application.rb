@@ -32,3 +32,5 @@ module BaicaiRailsBlog
     end
   end
 end
+
+require File.expand_path('../../app/models/base', __FILE__)
