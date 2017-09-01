@@ -29,6 +29,28 @@ class ArticlesController < ApplicationController
     render :json => model
   end
 
+  def search
+
+    if params[:page].nil?
+      params[:page] = 1
+    end
+    if params[:per_page].nil?
+      params[:per_page] = 10
+    end
+
+    tmp = Article.where('title like ? or text like ?','%'+params[:s]+'%','%'+params[:s]+'%')
+    articles = tmp.order('id DESC').paginate(:page => params[:page],:per_page => params[:per_page])
+
+    articles.each do |article|
+      article.text = str_truncate(article.text,120)
+    end
+
+    total = tmp.count
+    model = Model.create(200,'success',articles,params[:page],params[:per_page],total)
+
+    render :json =>model
+  end
+
   private
   def str_truncate str,count
     return Truncato.truncate(str,
