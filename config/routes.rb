@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'articles/search'
 
+  get 'configs/login'
+
   resources :req_logs, except: [:new, :edit]
   resources :configs, except: [:new, :edit]
   resources :links, except: [:new, :edit]
