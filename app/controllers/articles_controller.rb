@@ -51,6 +51,25 @@ class ArticlesController < ApplicationController
     render :json =>model
   end
 
+  def create
+    token = params[:token]
+    if token == Digest::MD5.hexdigest("#{Config.getValue('pwd')}#{Time.now.month}")
+
+      article = Article.new(article_params)
+      if article.save
+        model = Model.new(200,'success',article)
+        render :json => model
+      else
+        model = Model.new(400,'更新失败。','')
+        render :json =>model
+      end
+
+    else
+      model = Model.new(301,'用户验证失败。','')
+      render :json =>model
+    end
+  end
+
   private
   def str_truncate str,count
     return Truncato.truncate(str,
@@ -58,6 +77,9 @@ class ArticlesController < ApplicationController
                              count_tags: false,
                              filtered_tags: %w(h1 h2 h3 h4 h5 video iframe button br),
                              filtered_attributes: %w(style)).gsub('<p></p>','')
+  end
+  def article_params
+    params.require(:article).permit(:title, :text, :category_id)
   end
 
 end
