@@ -1,6 +1,7 @@
 require 'digest/md5'
 
 class ConfigsController < ApplicationController
+  skip_before_action :check_auth, only: [:login]
 
   def login
     password = params[:password]
