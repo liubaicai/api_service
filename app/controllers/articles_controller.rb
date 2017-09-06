@@ -70,6 +70,44 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def update
+    token = params[:token]
+    if token == Digest::MD5.hexdigest("#{Config.getValue('pwd')}#{Time.now.month}")
+
+      article = Article.find(params[:id])
+      if article.update(article_params)
+        model = Model.new(200,'success',article)
+        render :json => model
+      else
+        model = Model.new(401,'更新失败。','')
+        render :json =>model
+      end
+
+    else
+      model = Model.new(301,'用户验证失败。','')
+      render :json =>model
+    end
+  end
+
+  def destroy
+    token = params[:token]
+    if token == Digest::MD5.hexdigest("#{Config.getValue('pwd')}#{Time.now.month}")
+
+      article = Article.find(params[:id])
+      if article.destroy
+        model = Model.new(200,'success','')
+        render :json => model
+      else
+        model = Model.new(402,'删除失败。','')
+        render :json =>model
+      end
+
+    else
+      model = Model.new(301,'用户验证失败。','')
+      render :json =>model
+    end
+  end
+
   private
   def str_truncate str,count
     return Truncato.truncate(str,
