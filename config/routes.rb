@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'articles/search'
 
   get 'configs/login'
+  get 'configs/uptoken'
 
   resources :req_logs, except: [:new, :edit]
   resources :configs, except: [:new, :edit]

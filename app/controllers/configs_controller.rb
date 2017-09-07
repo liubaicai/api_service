@@ -14,4 +14,17 @@ class ConfigsController < ApplicationController
     end
   end
 
+  def uptoken
+    filename = params[:filename]
+    Qiniu.establish_connection!(
+        :access_key => Config.getValue('qn_ak'),
+        :secret_key => Config.getValue('qn_sk'))
+
+    bucket = 'www-liubaicai-net'
+    put_policy = Qiniu::Auth::PutPolicy.new(bucket)
+    uptoken = Qiniu::Auth.generate_uptoken(put_policy)
+
+    render :json => {:uptoken => uptoken}
+  end
+
 end
