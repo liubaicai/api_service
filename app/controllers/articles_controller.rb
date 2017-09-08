@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
       model = Model.new(200,'success',article)
       render :json => model
     else
-      model = Model.new(400,'更新失败。','')
+      model = Model.new(400,'新建失败。','')
       render :json =>model
     end
   end
