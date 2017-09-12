@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     articles = Article.order('id DESC').paginate(:page => params[:page],:per_page => params[:per_page])
 
     articles.each do |article|
-      article.text = str_truncate(article.text,120)
+      article.text = str_truncate(article.text,240)
     end
 
     total = Article.count
@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
     articles = tmp.order('id DESC').paginate(:page => params[:page],:per_page => params[:per_page])
 
     articles.each do |article|
-      article.text = str_truncate(article.text,120)
+      article.text = str_truncate(article.text,240)
     end
 
     total = tmp.count
@@ -90,7 +90,7 @@ class ArticlesController < ApplicationController
     return Truncato.truncate(str,
                              max_length: count,
                              count_tags: false,
-                             filtered_tags: %w(h1 h2 h3 h4 h5 video iframe button br),
+                             filtered_tags: %w(h1 h2 h3 h4 h5 video iframe button br img),
                              filtered_attributes: %w(style)).gsub('<p></p>','')
   end
   def article_params
