@@ -1,5 +1,5 @@
-class ArticlesController < ApplicationController
-  skip_before_action :check_auth, only: [:index, :show, :search]
+class Blog::ArticlesController < ApplicationController
+  skip_before_action :check_blog_auth, only: [:index, :show, :search]
 
   def index
 
@@ -10,20 +10,20 @@ class ArticlesController < ApplicationController
       params[:per_page] = 10
     end
 
-    articles = Article.order('id DESC').paginate(:page => params[:page],:per_page => params[:per_page])
+    articles = Blog::Article.order('id DESC').paginate(:page => params[:page],:per_page => params[:per_page])
 
     articles.each do |article|
       article.text = str_truncate(article.text,240)
     end
 
-    total = Article.count
+    total = Blog::Article.count
     model = Model.create(200,'success',articles,params[:page],params[:per_page],total)
 
     render :json =>model
   end
 
   def show
-    article = Article.find(params[:id])
+    article = Blog::Article.find(params[:id])
     article.views = article.views+1;
     article.save
     model = Model.new(200,'success',article)
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
       params[:per_page] = 10
     end
 
-    tmp = Article.where('title like ? or text like ?','%'+params[:s]+'%','%'+params[:s]+'%')
+    tmp = Blog::Article.where('title like ? or text like ?','%'+params[:s]+'%','%'+params[:s]+'%')
     articles = tmp.order('id DESC').paginate(:page => params[:page],:per_page => params[:per_page])
 
     articles.each do |article|
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new(article_params)
+    article = Blog::Article.new(article_params)
     if article.save
       model = Model.new(200,'success',article)
       render :json => model
@@ -64,7 +64,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = Article.find(params[:id])
+    article = Blog::Article.find(params[:id])
     if article.update(article_params)
       model = Model.new(200,'success',article)
       render :json => model
@@ -75,7 +75,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    article = Article.find(params[:id])
+    article = Blog::Article.find(params[:id])
     if article.destroy
       model = Model.new(200,'success','')
       render :json => model

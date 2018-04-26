@@ -5,7 +5,6 @@ CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" v
 CREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text(16777214), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer, "views" integer DEFAULT 0);
 CREATE INDEX "index_articles_on_category_id" ON "articles" ("category_id");
 CREATE TABLE "configs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sc_key" varchar, "sc_value" text, "sc_note" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-CREATE TABLE "req_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ip" varchar, "url" varchar(250), "method" varchar, "ua" varchar(250), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO schema_migrations (version) VALUES ('20160428041322');
 
 INSERT INTO schema_migrations (version) VALUES ('20160429143423');

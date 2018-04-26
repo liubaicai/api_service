@@ -1,14 +1,14 @@
-class LinksController < ApplicationController
-  skip_before_action :check_auth, only: [:index]
+class Blog::LinksController < ApplicationController
+  skip_before_action :check_blog_auth, only: [:index]
 
   def index
-    links = Link.all.order('sort DESC')
+    links = Blog::Link.all.order('sort DESC')
     model = Model.new(200,'success',links)
     render :json =>model
   end
 
   def create
-    link = Link.new(link_params)
+    link = Blog::Link.new(link_params)
     if link.save
       model = Model.new(200,'success',link)
       render :json => model
@@ -19,7 +19,7 @@ class LinksController < ApplicationController
   end
 
   def update
-    link = Link.find(params[:id])
+    link = Blog::Link.find(params[:id])
     if link.update(link_params)
       model = Model.new(200,'success',link)
       render :json => model
@@ -30,7 +30,7 @@ class LinksController < ApplicationController
   end
 
   def destroy
-    link = Link.find(params[:id])
+    link = Blog::Link.find(params[:id])
     if link.destroy
       model = Model.new(200,'success','')
       render :json => model

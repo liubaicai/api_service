@@ -1,14 +1,14 @@
-class CategoriesController < ApplicationController
-  skip_before_action :check_auth, only: [:index]
+class Blog::CategoriesController < ApplicationController
+  skip_before_action :check_blog_auth, only: [:index]
 
   def index
-    categories = Category.all
+    categories = Blog::Category.all
     model = Model.new(200,'success',categories)
     render :json =>model
   end
 
   def create
-    category = Category.new(category_params)
+    category = Blog::Category.new(category_params)
     if category.save
       model = Model.new(200,'success',category)
       render :json => model
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    category = Category.find(params[:id])
+    category = Blog::Category.find(params[:id])
     if category.update(category_params)
       model = Model.new(200,'success',category)
       render :json => model
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    category = Category.find(params[:id])
+    category = Blog::Category.find(params[:id])
     if category.destroy
       model = Model.new(200,'success','')
       render :json => model

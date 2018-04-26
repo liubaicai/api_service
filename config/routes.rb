@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'articles/search'
+  namespace :blog do
 
-  get 'configs/login'
-  get 'configs/uptoken'
+    get 'articles/search'
+    get 'configs/login'
+    get 'configs/uptoken'
 
-  resources :req_logs, except: [:new, :edit]
-  resources :configs, except: [:new, :edit]
-  resources :links, except: [:new, :edit]
-  resources :categories, except: [:new, :edit]
-  resources :articles, except: [:new, :edit]
+    resources :configs, except: [:new, :edit]
+    resources :links, except: [:new, :edit]
+    resources :categories, except: [:new, :edit]
+    resources :articles, except: [:new, :edit]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
