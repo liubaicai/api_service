@@ -1,4 +1,5 @@
 class Blog::Config < ActiveRecord::Base
+    self.table_name = :blog_configs
     
     def self.getValue key
         return Blog::Config.where(:sc_key=>key).take.sc_value
