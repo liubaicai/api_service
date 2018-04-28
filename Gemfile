@@ -1,7 +1,7 @@
 source 'https://gems.ruby-china.org'
 
 
-gem 'rails', '4.2.7.1'
+gem 'rails', '4.2.10'
 
 gem 'rails-api'
 
