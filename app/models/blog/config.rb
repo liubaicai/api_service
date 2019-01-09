@@ -1,4 +1,4 @@
-class Blog::Config < ActiveRecord::Base
+class Blog::Config < ApplicationRecord
     self.table_name = :blog_configs
     
     def self.getValue key

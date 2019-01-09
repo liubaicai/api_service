@@ -1,4 +1,4 @@
-class RenameTableToBlog < ActiveRecord::Migration
+class RenameTableToBlog < ActiveRecord::Migration[4.2]
   def change
     rename_table :articles, :blog_articles
     rename_table :categories, :blog_categories

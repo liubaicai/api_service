@@ -13,13 +13,20 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-!/log/.keep
 /tmp/*
-!/tmp/restart.txt
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
 
 # Ignore ide config.
 /public/.idea/*
 /.idea/*
 /node_modules/*
-
-Gemfile.lock

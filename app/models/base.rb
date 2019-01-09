@@ -1,3 +1,4 @@
+
 class Model
   def initialize (code,message,data)
     @code = code

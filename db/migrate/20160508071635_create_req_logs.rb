@@ -1,4 +1,4 @@
-class CreateReqLogs < ActiveRecord::Migration
+class CreateReqLogs < ActiveRecord::Migration[4.2]
   def change
     create_table :req_logs do |t|
       t.string :ip
