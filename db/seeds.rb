@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if (User.count==0)
+    User.create({
+        :username=>'admin',
+        :password=>Digest::MD5.hexdigest('admin'),
+        :nickname=>'admin',
+        :icon=>'',
+        :token=>''
+    })
+end

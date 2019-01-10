@@ -1,5 +1,5 @@
 class Blog::ArticlesController < ApplicationController
-  skip_before_action :check_blog_auth, only: [:index, :show, :search]
+  skip_before_action :check_token, only: [:index, :show, :search]
 
   def index
 

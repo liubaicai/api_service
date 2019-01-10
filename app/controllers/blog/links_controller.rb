@@ -1,5 +1,5 @@
 class Blog::LinksController < ApplicationController
-  skip_before_action :check_blog_auth, only: [:index]
+  skip_before_action :check_token, only: [:index]
 
   def index
     links = Blog::Link.all.order('sort DESC')
