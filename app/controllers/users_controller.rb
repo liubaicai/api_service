@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         pwd = params[:password]
         if !usr.nil? && !pwd.nil?
             user = User.find_by(username: usr)
-            if !user.nil? && user.password.downcase == Digest::MD5.hexdigest(pwd).downcase
+            if !user.nil? && user.password.downcase == pwd.downcase
                 user.token = Digest::MD5.hexdigest("#{user.username}#{Time.now}")
                 user.save
                 model = Model.new(200,'success',Hash[:token => user.token])
@@ -25,8 +25,8 @@ class UsersController < ApplicationController
         oldpwd = params[:oldpassword]
         pwd = params[:password]
         user = User.find_by(token: request.headers['HTTP_TOKEN'])
-        if user.password.downcase == Digest::MD5.hexdigest(oldpwd).downcase
-            user.password = Digest::MD5.hexdigest(pwd)
+        if user.password.downcase == oldpwd.downcase
+            user.password = pwd
             user.token = Digest::MD5.hexdigest("#{user.username}#{Time.now}")
             user.save
             model = Model.new(200,'success',Hash[:token => user.token])
